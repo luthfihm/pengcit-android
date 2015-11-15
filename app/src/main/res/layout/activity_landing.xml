@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".LandingActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Histogram Equalization"
+            android:id="@+id/button_HistogramActivity"
+            android:layout_gravity="center_horizontal" />
+
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="Otsu Binarization" android:id="@+id/button_OtsuActivity"
+                android:layout_gravity="center_horizontal"/>
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="Chain Code" android:id="@+id/button_ChainCodeActivity"
+                />
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="Turn Code" android:id="@+id/button_TurnCodeActivity"
+                />
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="Zhang Suen Skeleton Thinning" android:id="@+id/button_ThinningActivity"
+                android:layout_gravity="center_horizontal"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Detect Number"
+            android:id="@+id/button_DetectNumberActivity"
+                />
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Edge Detection"
+                android:id="@+id/button_EdgeDetection" android:layout_gravity="center_horizontal"/>
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="First Order Edge Detection"
+                android:id="@+id/button_EdgeDetectionFirstOrder" android:layout_gravity="center_horizontal"/>
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Second Order Edge Detection"
+                android:id="@+id/button_EdgeDetectionSecondOrder" android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+</RelativeLayout>

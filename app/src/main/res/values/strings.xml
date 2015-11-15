@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">IF4073-pengcit</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_basic_image_filter">BasicImageFilterActivity</string>
+    <string name="title_activity_color_view">ColorViewActivity</string>
+    <string name="title_activity_otsu">OtsuActivity</string>
+    <string name="title_activity_zhang_suen">ZhangSuenActivity</string>
+    <string name="title_activity_chain_code">ChainCodeActivity</string>
+    <string name="title_activity_edge_detection">EdgeDetectionActivity</string>
+    <string name="title_activity_edge_detection_first_order">edgeDetectionFirstOrderActivity</string>
+</resources>
