@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.gitlab.alvin_nt.if4073_pengcit.algorithms.EdgeDetectionFirstOrder;
 import com.gitlab.alvin_nt.if4073_pengcit.algorithms.FaceDetectionColorMap;
 
 import java.io.FileNotFoundException;
@@ -26,6 +25,7 @@ public class FaceDetectionColorMapActivity extends Activity implements View.OnCl
     private final int SELECT_PHOTO = 1;
     private Button btnSelectImage;
     private ImageView imageViewInput;
+    private ImageView imageViewOutput;
 
 
     public static void startThisActivity(Context ctx){
@@ -76,18 +76,8 @@ public class FaceDetectionColorMapActivity extends Activity implements View.OnCl
 
                         imageViewInput.setImageBitmap(inputImage);
                         FaceDetectionColorMap faceDetectionColorMap = new FaceDetectionColorMap(inputImage);
-
-                        /*edgeDetectionFirstOrder.setOperator(EdgeDetectionFirstOrder.SOBEL_OPR);
-                        Bitmap outputSobel = edgeDetectionFirstOrder.getSharpenedImage();
-                        imageViewSobel.setImageBitmap(outputSobel);
-
-                        edgeDetectionFirstOrder.setOperator(EdgeDetectionFirstOrder.PREWIT_OPR);
-                        Bitmap outputPrewit = edgeDetectionFirstOrder.getSharpenedImage();
-                        imageViewPrewit.setImageBitmap(outputPrewit);
-
-                        edgeDetectionFirstOrder.setOperator(EdgeDetectionFirstOrder.SCHARR_OPR);
-                        Bitmap outputScharr = edgeDetectionFirstOrder.getSharpenedImage();
-                        imageViewScharr.setImageBitmap(outputScharr);*/
+                        Bitmap outputImage = faceDetectionColorMap.getFaceDetectedImage();
+                        imageViewOutput.setImageBitmap(outputImage);
 
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
