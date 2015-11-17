@@ -42,5 +42,7 @@
                 android:id="@+id/button_EdgeDetectionFirstOrder" android:layout_gravity="center_horizontal"/>
         <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Second Order Edge Detection"
                 android:id="@+id/button_EdgeDetectionSecondOrder" android:layout_gravity="center_horizontal"/>
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Face Detection Color Map"
+            android:id="@+id/button_FaceDetectionColorMap" android:layout_gravity="center_horizontal"/>
     </LinearLayout>
 </RelativeLayout>
