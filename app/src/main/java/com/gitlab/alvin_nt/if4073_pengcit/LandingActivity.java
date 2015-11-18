@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-
 public class LandingActivity extends ActionBarActivity implements View.OnClickListener{
     private Button btnHistogram;
     private Button btnDetectNumber;
@@ -17,6 +16,7 @@ public class LandingActivity extends ActionBarActivity implements View.OnClickLi
     private Button btnChainCode;
     private Button btnEdgeDetection;
     private Button btnEdgeDetectionFirstOrder;
+    private Button btnFaceDetectionColorMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,9 @@ public class LandingActivity extends ActionBarActivity implements View.OnClickLi
 
         btnEdgeDetectionFirstOrder = (Button) findViewById(R.id.button_EdgeDetectionFirstOrder);
         btnEdgeDetectionFirstOrder.setOnClickListener(this);
+
+        btnFaceDetectionColorMap = (Button) findViewById(R.id.button_FaceDetectionColorMap);
+        btnFaceDetectionColorMap.setOnClickListener(this);
     }
 
 
@@ -101,6 +104,9 @@ public class LandingActivity extends ActionBarActivity implements View.OnClickLi
                 break;
             case R.id.button_EdgeDetectionFirstOrder:
                 EdgeDetectionFirstOrderActivity.startThisActivity(this);
+                break;
+            case R.id.button_FaceDetectionColorMap:
+                FaceDetectionColorMapActivity.startThisActivity(this);
                 break;
         }
     }

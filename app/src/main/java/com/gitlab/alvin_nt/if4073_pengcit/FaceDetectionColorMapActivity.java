@@ -36,17 +36,17 @@ public class FaceDetectionColorMapActivity extends Activity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edge_detection_first_order);
+        setContentView(R.layout.activity_face_detection_colormap);
         imageViewInput = (ImageView)findViewById(R.id.imageViewInput);
-
         btnSelectImage = (Button) findViewById(R.id.button_PickImage);
         btnSelectImage.setOnClickListener(this);
+        imageViewOutput = (ImageView)findViewById(R.id.imageViewOutput);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_edge_detection_first_order, menu);
+        getMenuInflater().inflate(R.menu.menu_face_detection_colormap, menu);
         return true;
     }
 
@@ -82,7 +82,6 @@ public class FaceDetectionColorMapActivity extends Activity implements View.OnCl
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
-
                 }
         }
     }

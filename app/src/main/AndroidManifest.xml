@@ -54,6 +54,10 @@
             android:name=".EdgeDetectionFirstOrderActivity"
             android:label="@string/title_activity_edge_detection_first_order" >
         </activity>
+        <activity
+            android:name=".FaceDetectionColorMapActivity"
+            android:label="@string/title_activity_face_detection_colormap" >
+        </activity>
     </application>
 
 </manifest>
