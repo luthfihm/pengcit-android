@@ -100,24 +100,40 @@ public class FaceDetectionKMeans {
 
         return new Point(newX,newY);
     }
-    public void startClustering(){
+    public Bitmap getImageAfterClustering(){
         Point oldRightEyeCentroid = rightEyeCentroid;
         Point oldLeftEyeCentroid = leftEyeCentroid;
         Point oldNoseCentroid = noseCentroid;
         Point oldMouthCentroid = mouthCentroid;
         do{
+            rightEyeCluster.clear();
+            leftEyeCluster.clear();
+            noseCluster.clear();
+            mouthCluster.clear();
+            //start to clustering
             Clustering();
             rightEyeCentroid = getNewCentroid(rightEyeCluster);
             leftEyeCentroid = getNewCentroid(leftEyeCluster);
             noseCentroid = getNewCentroid(noseCluster);
             mouthCentroid = getNewCentroid(mouthCluster);
-            rightEyeCluster.clear();
-            leftEyeCluster.clear();
-            noseCluster.clear();
-            mouthCluster.clear();
         //until stable
         }while((!oldRightEyeCentroid.equals(rightEyeCentroid))&&(!oldLeftEyeCentroid.equals(leftEyeCentroid))
                 &&(!oldNoseCentroid.equals(noseCentroid))&&(!oldMouthCentroid.equals(mouthCentroid)));
+        //coloring Cluster Point
+        for(Point currentPoint : rightEyeCluster){
+            newImage.setPixel(currentPoint.x,currentPoint.y,Color.RED);
+        }
+        for(Point currentPoint : leftEyeCluster){
+            newImage.setPixel(currentPoint.x,currentPoint.y,Color.BLUE);
+        }
+        for(Point currentPoint : noseCluster){
+            newImage.setPixel(currentPoint.x,currentPoint.y,Color.GREEN);
+        }
+        for(Point currentPoint : mouthCluster){
+            newImage.setPixel(currentPoint.x,currentPoint.y,Color.YELLOW);
+        }
+
+        return newImage;
     }
 }
 

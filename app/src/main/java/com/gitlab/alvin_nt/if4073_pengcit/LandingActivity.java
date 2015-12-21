@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.gitlab.alvin_nt.if4073_pengcit.algorithms.FaceDetectionKMeans;
+
 public class LandingActivity extends ActionBarActivity implements View.OnClickListener{
     private Button btnHistogram;
     private Button btnDetectNumber;
@@ -107,6 +109,9 @@ public class LandingActivity extends ActionBarActivity implements View.OnClickLi
                 break;
             case R.id.button_FaceDetectionColorMap:
                 FaceDetectionColorMapActivity.startThisActivity(this);
+                break;
+            case R.id.button_FaceDetectionKMeans:
+                FaceDetectionKMeansActivity.startThisActivity(this);
                 break;
         }
     }
