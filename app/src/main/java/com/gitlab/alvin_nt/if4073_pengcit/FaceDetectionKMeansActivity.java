@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.gitlab.alvin_nt.if4073_pengcit.algorithms.EdgeDetection;
 import com.gitlab.alvin_nt.if4073_pengcit.algorithms.FaceDetectionKMeans;
 
 import java.io.FileNotFoundException;
@@ -25,6 +26,7 @@ public class FaceDetectionKMeansActivity extends Activity implements View.OnClic
     private Button btnSelectImage;
     private ImageView imageViewInput;
     private ImageView imageViewOutput;
+    private EdgeDetection edgeDetection;
 
 
     public static void startThisActivity(Context ctx){
@@ -73,10 +75,16 @@ public class FaceDetectionKMeansActivity extends Activity implements View.OnClic
                         final InputStream imageStream = getContentResolver().openInputStream(imageUri);
                         final Bitmap inputImage = BitmapFactory.decodeStream(imageStream);
 
+                        //edge detection
                         imageViewInput.setImageBitmap(inputImage);
-                        FaceDetectionKMeans faceDetectionKMeans = new FaceDetectionKMeans(inputImage);
-                        Bitmap outputImage = faceDetectionKMeans.getImageAfterClustering();
-                        imageViewOutput.setImageBitmap(outputImage);
+                        edgeDetection = new EdgeDetection(inputImage);
+                        Bitmap outputImage1 = edgeDetection.getByDifference();
+                        imageViewOutput.setImageBitmap(outputImage1);
+
+                        //k-means
+                        FaceDetectionKMeans faceDetectionKMeans = new FaceDetectionKMeans(outputImage1);
+                        Bitmap outputImage2 = faceDetectionKMeans.getImageAfterClustering();
+                        imageViewOutput.setImageBitmap(outputImage2);
 
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
