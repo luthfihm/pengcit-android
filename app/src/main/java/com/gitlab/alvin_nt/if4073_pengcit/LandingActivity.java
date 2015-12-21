@@ -19,6 +19,7 @@ public class LandingActivity extends ActionBarActivity implements View.OnClickLi
     private Button btnEdgeDetection;
     private Button btnEdgeDetectionFirstOrder;
     private Button btnFaceDetectionColorMap;
+    private Button btnFaceDetectionKMeans;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,9 @@ public class LandingActivity extends ActionBarActivity implements View.OnClickLi
 
         btnFaceDetectionColorMap = (Button) findViewById(R.id.button_FaceDetectionColorMap);
         btnFaceDetectionColorMap.setOnClickListener(this);
+
+        btnFaceDetectionKMeans = (Button) findViewById(R.id.button_FaceDetectionKMeans);
+        btnFaceDetectionKMeans.setOnClickListener(this);
     }
 
 
