@@ -58,6 +58,10 @@
             android:name=".FaceDetectionColorMapActivity"
             android:label="@string/title_activity_face_detection_colormap" >
         </activity>
+        <activity
+            android:name=".FaceDetectionKMeansActivity"
+            android:label="@string/title_activity_face_detection_kmeans" >
+        </activity>
     </application>
 
 </manifest>
