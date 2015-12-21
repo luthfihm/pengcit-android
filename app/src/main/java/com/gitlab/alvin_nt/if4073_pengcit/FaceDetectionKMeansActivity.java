@@ -14,6 +14,7 @@ import android.widget.ImageView;
 
 import com.gitlab.alvin_nt.if4073_pengcit.algorithms.EdgeDetection;
 import com.gitlab.alvin_nt.if4073_pengcit.algorithms.FaceDetectionKMeans;
+import com.gitlab.alvin_nt.if4073_pengcit.algorithms.OtsuBinarize;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -26,8 +27,6 @@ public class FaceDetectionKMeansActivity extends Activity implements View.OnClic
     private Button btnSelectImage;
     private ImageView imageViewInput;
     private ImageView imageViewOutput;
-    private EdgeDetection edgeDetection;
-
 
     public static void startThisActivity(Context ctx){
         Intent intent = new Intent(ctx, FaceDetectionKMeansActivity.class);
@@ -77,12 +76,17 @@ public class FaceDetectionKMeansActivity extends Activity implements View.OnClic
 
                         //edge detection
                         imageViewInput.setImageBitmap(inputImage);
-                        edgeDetection = new EdgeDetection(inputImage);
+                        EdgeDetection edgeDetection = new EdgeDetection(inputImage);
                         Bitmap outputImage1 = edgeDetection.getByDifference();
-                        imageViewOutput.setImageBitmap(outputImage1);
+                        //imageViewOutput.setImageBitmap(outputImage1);
+
+                        OtsuBinarize otsuBinarize = new OtsuBinarize(outputImage1);
+                        Bitmap imageBinaries = otsuBinarize.getBinarizeNotOtsu(25);
+                        //Bitmap imageBinaries = otsuBinarize.getBinarize();
+                        //imageViewOutput.setImageBitmap(imageBinaries);
 
                         //k-means
-                        FaceDetectionKMeans faceDetectionKMeans = new FaceDetectionKMeans(outputImage1);
+                        FaceDetectionKMeans faceDetectionKMeans = new FaceDetectionKMeans(imageBinaries);
                         Bitmap outputImage2 = faceDetectionKMeans.getImageAfterClustering();
                         imageViewOutput.setImageBitmap(outputImage2);
 

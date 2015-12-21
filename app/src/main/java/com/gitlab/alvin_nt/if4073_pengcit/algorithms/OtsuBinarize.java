@@ -2,6 +2,7 @@ package com.gitlab.alvin_nt.if4073_pengcit.algorithms;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.util.Log;
 
 /**
  * Created by luthfi on 10/26/2015.
@@ -105,6 +106,39 @@ public class OtsuBinarize {
         int newPixel;
 
         this.setOtsuTreshold();
+        //Log.d("THRESHOLD BERAPA",""+threshold);
+        Bitmap binarized = gray.copy(gray.getConfig(),true);
+
+        for(int i=0; i<gray.getWidth(); i++) {
+            for(int j=0; j<gray.getHeight(); j++) {
+
+                // Get pixels
+                int pixel = gray.getPixel(i,j);
+                red = Color.red(pixel);
+                int alpha = Color.alpha(pixel);
+                if(red > threshold) {
+                    newPixel = 255;
+                }
+                else {
+                    newPixel = 0;
+                }
+                newPixel = Color.argb(alpha, newPixel, newPixel, newPixel);
+                binarized.setPixel(i, j, newPixel);
+
+            }
+        }
+
+        return binarized;
+
+    }
+    public Bitmap getBinarizeNotOtsu(int newThreshold) {
+
+        int red;
+        int newPixel;
+        threshold = newThreshold;
+        this.setGray();
+        this.setHistogram();
+        //this.setOtsuTreshold();
 
         Bitmap binarized = gray.copy(gray.getConfig(),true);
 
