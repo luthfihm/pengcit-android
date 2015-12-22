@@ -21,6 +21,7 @@ public class LandingActivity extends ActionBarActivity implements View.OnClickLi
     private Button btnEdgeDetectionSecondOrder;
     private Button btnFaceDetectionColorMap;
     private Button btnFaceDetectionKMeans;
+    private Button btnGaussianBlur;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,9 @@ public class LandingActivity extends ActionBarActivity implements View.OnClickLi
 
         btnFaceDetectionKMeans = (Button) findViewById(R.id.button_FaceDetectionKMeans);
         btnFaceDetectionKMeans.setOnClickListener(this);
+
+        btnGaussianBlur = (Button) findViewById(R.id.button_gauss);
+        btnGaussianBlur.setOnClickListener(this);
     }
 
 
@@ -105,6 +109,9 @@ public class LandingActivity extends ActionBarActivity implements View.OnClickLi
                 break;
             case R.id.button_FaceDetectionKMeans:
                 FaceDetectionKMeansActivity.startThisActivity(this);
+                break;
+            case R.id.button_gauss:
+                BasicImageFilterActivity.startThisActivity(this);
                 break;
         }
     }
