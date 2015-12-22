@@ -18,6 +18,7 @@ public class LandingActivity extends ActionBarActivity implements View.OnClickLi
     private Button btnChainCode;
     private Button btnEdgeDetection;
     private Button btnEdgeDetectionFirstOrder;
+    private Button btnEdgeDetectionSecondOrder;
     private Button btnFaceDetectionColorMap;
     private Button btnFaceDetectionKMeans;
 
@@ -29,23 +30,17 @@ public class LandingActivity extends ActionBarActivity implements View.OnClickLi
         btnHistogram = (Button) findViewById(R.id.button_HistogramActivity);
         btnHistogram.setOnClickListener(this);
 
-        btnDetectNumber = (Button) findViewById(R.id.button_DetectNumberActivity);
-        btnDetectNumber.setOnClickListener(this);
-
-        btnZhangSuen = (Button) findViewById(R.id.button_ThinningActivity);
-        btnZhangSuen.setOnClickListener(this);
-
         btnOtsu = (Button) findViewById(R.id.button_OtsuActivity);
         btnOtsu.setOnClickListener(this);
-
-        btnChainCode = (Button) findViewById(R.id.button_ChainCodeActivity);
-        btnChainCode.setOnClickListener(this);
 
         btnEdgeDetection = (Button) findViewById(R.id.button_EdgeDetection);
         btnEdgeDetection.setOnClickListener(this);
 
         btnEdgeDetectionFirstOrder = (Button) findViewById(R.id.button_EdgeDetectionFirstOrder);
         btnEdgeDetectionFirstOrder.setOnClickListener(this);
+
+        btnEdgeDetectionSecondOrder = (Button) findViewById(R.id.button_EdgeDetectionSecondOrder);
+        btnEdgeDetectionSecondOrder.setOnClickListener(this);
 
         btnFaceDetectionColorMap = (Button) findViewById(R.id.button_FaceDetectionColorMap);
         btnFaceDetectionColorMap.setOnClickListener(this);
@@ -93,23 +88,17 @@ public class LandingActivity extends ActionBarActivity implements View.OnClickLi
             case R.id.button_HistogramActivity:
                 HistogramActivity.startThisActivity(this);
                 break;
-            case R.id.button_DetectNumberActivity:
-                NumberDetectionActivity.startThisActivity(this);
-                break;
-            case R.id.button_ThinningActivity:
-                ZhangSuenActivity.startThisActivity(this);
-                break;
             case R.id.button_OtsuActivity:
                 OtsuActivity.startThisActivity(this);
-                break;
-            case R.id.button_ChainCodeActivity:
-                ChainCodeActivity.startThisActivity(this);
                 break;
             case R.id.button_EdgeDetection:
                 EdgeDetectionActivity.startThisActivity(this);
                 break;
             case R.id.button_EdgeDetectionFirstOrder:
                 EdgeDetectionFirstOrderActivity.startThisActivity(this);
+                break;
+            case R.id.button_EdgeDetectionSecondOrder:
+                EdgeDetectionSecondOrderActivity.startThisActivity(this);
                 break;
             case R.id.button_FaceDetectionColorMap:
                 FaceDetectionColorMapActivity.startThisActivity(this);

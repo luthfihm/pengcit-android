@@ -11,4 +11,5 @@
     <string name="title_activity_edge_detection_first_order">EdgeDetectionFirstOrderActivity</string>
     <string name="title_activity_face_detection_colormap">FaceDetectionColorMapActivity</string>
     <string name="title_activity_face_detection_kmeans">Face Detection K-Means</string>
+    <string name="title_activity_edge_detection_second_order">EdgeDetectionSecondOrderActivity</string>
 </resources>

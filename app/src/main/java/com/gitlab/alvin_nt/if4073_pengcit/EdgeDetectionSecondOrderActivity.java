@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -14,12 +15,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import com.gitlab.alvin_nt.if4073_pengcit.algorithms.EdgeDetectionFirstOrder;
+import com.gitlab.alvin_nt.if4073_pengcit.algorithms.EdgeDetectionSecondOrder;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 
-public class EdgeDetectionFirstOrderActivity extends Activity implements View.OnClickListener {
+public class EdgeDetectionSecondOrderActivity extends Activity implements View.OnClickListener {
 
     private final int SELECT_PHOTO = 1;
     private ImageView imageViewInput;
@@ -29,7 +31,7 @@ public class EdgeDetectionFirstOrderActivity extends Activity implements View.On
     private Button btnSelectImage;
 
     public static void startThisActivity(Context ctx){
-        Intent intent = new Intent(ctx, EdgeDetectionFirstOrderActivity.class);
+        Intent intent = new Intent(ctx, EdgeDetectionSecondOrderActivity.class);
         ctx.startActivity(intent);
     }
 
@@ -93,18 +95,18 @@ public class EdgeDetectionFirstOrderActivity extends Activity implements View.On
                         final InputStream imageStream = getContentResolver().openInputStream(imageUri);
                         final Bitmap inputImage = BitmapFactory.decodeStream(imageStream);
                         imageViewInput.setImageBitmap(inputImage);
-                        EdgeDetectionFirstOrder edgeDetectionFirstOrder = new EdgeDetectionFirstOrder(inputImage);
+                        EdgeDetectionSecondOrder edgeDetectionSecondOrder = new EdgeDetectionSecondOrder(inputImage);
 
-                        edgeDetectionFirstOrder.setOperator(EdgeDetectionFirstOrder.SOBEL_OPR);
-                        Bitmap outputSobel = edgeDetectionFirstOrder.getSharpenedImage();
+                        edgeDetectionSecondOrder.setOperator(EdgeDetectionFirstOrder.SOBEL_OPR);
+                        Bitmap outputSobel = edgeDetectionSecondOrder.getSharpenedImage();
                         imageViewSobel.setImageBitmap(outputSobel);
 
-                        edgeDetectionFirstOrder.setOperator(EdgeDetectionFirstOrder.PREWIT_OPR);
-                        Bitmap outputPrewit = edgeDetectionFirstOrder.getSharpenedImage();
+                        edgeDetectionSecondOrder.setOperator(EdgeDetectionFirstOrder.PREWIT_OPR);
+                        Bitmap outputPrewit = edgeDetectionSecondOrder.getSharpenedImage();
                         imageViewPrewit.setImageBitmap(outputPrewit);
 
-                        edgeDetectionFirstOrder.setOperator(EdgeDetectionFirstOrder.SCHARR_OPR);
-                        Bitmap outputScharr = edgeDetectionFirstOrder.getSharpenedImage();
+                        edgeDetectionSecondOrder.setOperator(EdgeDetectionFirstOrder.SCHARR_OPR);
+                        Bitmap outputScharr = edgeDetectionSecondOrder.getSharpenedImage();
                         imageViewScharr.setImageBitmap(outputScharr);
 
                     } catch (FileNotFoundException e) {

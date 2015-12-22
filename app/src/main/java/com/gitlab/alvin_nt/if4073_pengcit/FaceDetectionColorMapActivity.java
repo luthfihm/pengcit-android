@@ -74,10 +74,11 @@ public class FaceDetectionColorMapActivity extends Activity implements View.OnCl
                         final InputStream imageStream = getContentResolver().openInputStream(imageUri);
                         final Bitmap inputImage = BitmapFactory.decodeStream(imageStream);
 
-                        imageViewInput.setImageBitmap(inputImage);
+
+                        imageViewOutput.setImageBitmap(inputImage);
                         FaceDetectionColorMap faceDetectionColorMap = new FaceDetectionColorMap(inputImage);
                         Bitmap outputImage = faceDetectionColorMap.getFaceDetectedImage();
-                        imageViewOutput.setImageBitmap(outputImage);
+                        imageViewInput.setImageBitmap(outputImage);
 
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();

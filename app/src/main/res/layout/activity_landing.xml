@@ -21,7 +21,7 @@
         <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
                 android:text="Otsu Binarization" android:id="@+id/button_OtsuActivity"
                 android:layout_gravity="center_horizontal"/>
-        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+        <!--<Button android:layout_width="fill_parent" android:layout_height="wrap_content"
                 android:text="Chain Code" android:id="@+id/button_ChainCodeActivity"
                 />
         <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:text="Detect Number"
             android:id="@+id/button_DetectNumberActivity"
-                />
+                />-->
         <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Edge Detection"
                 android:id="@+id/button_EdgeDetection" android:layout_gravity="center_horizontal"/>
         <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="First Order Edge Detection"

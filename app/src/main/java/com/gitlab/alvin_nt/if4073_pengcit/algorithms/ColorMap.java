@@ -139,7 +139,7 @@ public class ColorMap {
     public boolean isOnColorMap (RGB currentPixel){
         boolean found = false;
         int i=0;
-        while((i<=25) && (!found)){
+        while((i<25) && (!found)){
 
             if ((abs(ucupSample[i].getRed() - currentPixel.getRed()) <= threshold) &&
                     (abs(ucupSample[i].getGreen() - currentPixel.getGreen()) <= threshold) &&
